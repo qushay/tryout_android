@@ -21,7 +21,7 @@ import android.util.Log;
 
 public class JSONParser {
 
-	public String url_server="http://labsistemkomputer.net/user/qlay/client/";
+	public String url_server="http://192.168.43.35/tryout/client/";
 	
     private String url_tryout = url_server+"tryout.php";
     public String url_gbr_soal = url_server+"soal/";

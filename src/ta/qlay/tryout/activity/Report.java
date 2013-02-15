@@ -7,7 +7,6 @@ import java.util.HashMap;
 import ta.qlay.tryout.activity.R;
 import ta.qlay.tryout.library.SimpleGestureFilter;
 import ta.qlay.tryout.library.SimpleGestureFilter.SimpleGestureListener;
-import android.R.color;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
@@ -36,7 +35,6 @@ public class Report extends ListActivity implements SimpleGestureListener
 	private static final String TAG_WAKTU = "waktu";
 	private static final String TAG_MAPEL = "mapel";
 	private static final String TAG_NILAI = "nilai";
-	private static final String TAG_KODE = "kode";
 	private static final String TAG_ID = "id";
 
 	// Shared Preference
@@ -48,7 +46,7 @@ public class Report extends ListActivity implements SimpleGestureListener
 	String DBName = "TRYOUT_LOCAL.db";
 	String TableSoal = "tbSoal";
 	String TableHasil = "tbHasil";
-	String vJml,vBenar,vSalah,vKosong,vNilai,vKode,vMapel;
+	String vJml,vBenar,vSalah,vKosong,vNilai,vMapel;
 	
 	ArrayList<String> columnArray1 = new ArrayList<String>();
 	String[] colStrArr1;
@@ -224,9 +222,9 @@ public void onDoubleTap() {
 private void isiList(String mapel){
 	try{
 	myDB = this.openOrCreateDatabase(DBName,0, null);
-	Cursor c = myDB.rawQuery("SELECT id,mapel,kode,nilai,TIME(tgl) waktu FROM "+TableHasil+" WHERE user='"+spUser+"' AND mapel='"+mapel+"' AND DATE(tgl)='"+colStrArr1[iTgl]+"'"  , null);
+	Cursor c = myDB.rawQuery("SELECT id,mapel,nilai,TIME(tgl) waktu FROM "+TableHasil+" WHERE user='"+spUser+"' AND mapel='"+mapel+"' AND DATE(tgl)='"+colStrArr1[iTgl]+"'"  , null);
 	
-	String vWaktu,vMapel,vNilai,vId,vKode;
+	String vWaktu,vMapel,vNilai,vId;
 	productsList.clear();
 	c.moveToFirst();
 	if (c!=null&&c.getCount()!=0){
@@ -234,7 +232,6 @@ private void isiList(String mapel){
 		int Coloumn2= c.getColumnIndex("mapel");
 		int Coloumn3= c.getColumnIndex("nilai");
 		int Coloumn4= c.getColumnIndex("id");
-		int Coloumn5= c.getColumnIndex("kode");
 		do {
 			vId=c.getString(Coloumn4);
 			vWaktu= c.getString(Coloumn1);
@@ -249,7 +246,6 @@ private void isiList(String mapel){
 			}else if (vMapel.equals("IPA")){
 				vMapel="IPA";
 			}
-			vKode=c.getString(Coloumn5);
 			vNilai= c.getString(Coloumn3);
 			
 			HashMap<String, String> map= new HashMap<String, String>();
@@ -259,7 +255,6 @@ private void isiList(String mapel){
 			map.put(TAG_ID, vId);
 			map.put(TAG_WAKTU, vWaktu);
 			map.put(TAG_MAPEL, vMapel);
-			map.put(TAG_KODE, vKode);
 			map.put(TAG_NILAI, vNilai);
 			// adding HashList to ArrayList
 			productsList.add(map);

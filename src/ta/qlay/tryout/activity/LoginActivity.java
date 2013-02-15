@@ -4,13 +4,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -43,7 +40,7 @@ public class LoginActivity extends Activity {
 		//Create DB & Table
 		myDB = openOrCreateDatabase(DBName, MODE_PRIVATE, null);
     	myDB.execSQL("CREATE TABLE IF NOT EXISTS "+TableHasil+"(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,user VARCHAR(50)," +
-    			"mapel VARCHAR(3),kode VARCHAR(3),jml_soal VARCHAR(3),benar VARCHAR(3)," +
+    			"mapel VARCHAR(3),jml_soal VARCHAR(3),benar VARCHAR(3)," +
     			"salah VARCHAR(3),kosong VARCHAR(3), nilai VARCHAR(5), tgl DATETIME);");
     	
 
@@ -52,22 +49,11 @@ public class LoginActivity extends Activity {
         spEdit = sp.edit();
         
 		// Importing all assets like buttons, text fields
-//    	btnReg=(Button)findViewById(R.id.login_reg);
 		inputEmail = (EditText) findViewById(R.id.loginEmail);
 		inputPassword = (EditText) findViewById(R.id.loginPassword);
 		btnLogin = (Button) findViewById(R.id.btnLogin);
 		loginErrorMsg = (TextView) findViewById(R.id.login_error);
 		
-		//Button daftar event
-//		btnReg.setOnClickListener(new View.OnClickListener() {
-//
-//			public void onClick(View view) {
-//				Intent reg = new Intent(getApplicationContext(), RegActivity.class);
-//				
-//				startActivity(reg);
-//			}
-//		});
-//		
 		// Login button Click Event
 		btnLogin.setOnClickListener(new View.OnClickListener() {
 

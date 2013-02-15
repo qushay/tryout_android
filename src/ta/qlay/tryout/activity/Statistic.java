@@ -2,7 +2,6 @@
 package ta.qlay.tryout.activity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.achartengine.ChartFactory;
@@ -18,8 +17,6 @@ import ta.qlay.tryout.library.KonversiBulan;
 import ta.qlay.tryout.library.SimpleGestureFilter;
 import ta.qlay.tryout.library.SimpleGestureFilter.SimpleGestureListener;
 
-import android.R.color;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -227,9 +224,6 @@ protected void onCreate(Bundle savedInstanceState)
 
 }
 
-private void rataNilai(int nilai){
-	
-}
 
 private void renderGrafikMtk() {
 	renderer = new XYMultipleSeriesRenderer();

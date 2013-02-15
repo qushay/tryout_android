@@ -5,14 +5,10 @@ import ta.qlay.tryout.library.UserFunctions;
 
 import ta.qlay.tryout.activity.R;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Looper;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -65,10 +61,6 @@ public void onClickHome (View v)
     goHome (this);
 }
 
-public void onClickAbout (View v)
-{
-    startActivity (new Intent(getApplicationContext(), AboutActivity.class));
-}
 public void onClickLogout (View v)
 {
 	userFunctions = new UserFunctions();

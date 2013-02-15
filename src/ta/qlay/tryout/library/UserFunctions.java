@@ -17,7 +17,7 @@ import android.text.GetChars;
 public class UserFunctions {
 	
 	private JSONParser jsonParser;
-	private String url_server="http://labsistemkomputer.net/user/qlay/client/";
+	private String url_server="http://192.168.43.35/tryout/client/";
 	private String loginURL = url_server+"index.php";
     
     

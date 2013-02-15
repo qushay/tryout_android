@@ -66,10 +66,10 @@ public class TryoutMapel extends DashboardActivity
 		Notification notif;
 		PendingIntent contentIntent;
 		String tickerText;
-		String pMapel,pKode,spUser;
-		String [] vId,vSoal,vSolusi,vSolusibenar,vGbrsoal,vGbrsolusi,vGbrsolusibenar,vPil1,vGbrpil1,vPil2,vGbrpil2,vPil3,vGbrpil3,vPil4,vGbrpil4,vPilihan,vJwbPil1,vJwbPil2,vJwbPil3,vJwbPil4,vJawaban;
+		String pMapel,spUser;
+		String [] vId,vSoal,vSolusibenar,vGbrsoal,vGbrsolusibenar,vPil1,vGbrpil1,vPil2,vGbrpil2,vPil3,vGbrpil3,vPil4,vGbrpil4,vPilihan,vJwbPil1,vJwbPil2,vJwbPil3,vJwbPil4,vJawaban;
 		int k=1;int maxSoal;
-		ImageView tsoal_gbr,tpil1_gbr,tpil2_gbr,tpil3_gbr,tpil4_gbr,tsolusi_gbr,tsolusi_gbrbenar;
+		ImageView tsoal_gbr,tpil1_gbr,tpil2_gbr,tpil3_gbr,tpil4_gbr,tsolusi_gbrbenar;
 		Drawable [] drawSoal,drawPil1,drawPil2,drawPil3,drawPil4,drawSolusi,drawSolusiBenar;
 		CountDownTimer timer;
 		private ProgressDialog pDialog;
@@ -92,8 +92,6 @@ public class TryoutMapel extends DashboardActivity
 		private static final String TAG_GBR_PIL3 = "gbr_pil3";
 		private static final String TAG_PIL4 = "pil4";
 		private static final String TAG_GBR_PIL4 = "gbr_pil4";
-		private static final String TAG_SOLUSI = "solusi";
-		private static final String TAG_GBR_SOLUSI = "gbr_solusi";
 		private static final String TAG_STAT1= "stat1";
 		private static final String TAG_STAT2= "stat2";
 		private static final String TAG_STAT3= "stat3";
@@ -167,7 +165,6 @@ public class TryoutMapel extends DashboardActivity
 	    
 	    Bundle bundle = this.getIntent().getExtras();
 	    pMapel = bundle.getString("pMapel");
-	    pKode = bundle.getString("pKode");
 	    
 	    tv = (TextView) findViewById (R.id.title_text);
 	    if (pMapel.equals("MTK")){
@@ -337,7 +334,6 @@ public class TryoutMapel extends DashboardActivity
 		protected String doInBackground(String... args) {
 			params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair("mapel", pMapel));
-			params.add(new BasicNameValuePair("kode", pKode));
 			json = jParser.getJSONFromUrl("tryout", params);
 			Log.d("All Products: ", json.toString());
 			try {
@@ -349,8 +345,6 @@ public class TryoutMapel extends DashboardActivity
 					vGbrsoal = new String[products.length()];
 					vSolusibenar = new String[products.length()];
 					vGbrsolusibenar = new String[products.length()];
-					vSolusi = new String[products.length()];
-					vGbrsolusi = new String[products.length()];
 					vPil1 = new String[products.length()];
 					vPil2 = new String[products.length()];
 					vPil3 = new String[products.length()];
@@ -398,10 +392,6 @@ public class TryoutMapel extends DashboardActivity
 						vGbrpil4[i]=c.getString(TAG_GBR_PIL4);
 						drawPil4[i] = LoadImageFromWebOperations(jParser.url_gbr_pil+vGbrpil4[i]+".png");
 						vJwbPil4[i]=c.getString(TAG_STAT4);
-						vSolusi[i]=formatDegree(c.getString(TAG_SOLUSI));//solusi
-						vGbrsolusi[i]=c.getString(TAG_GBR_SOLUSI);
-						drawSolusi[i] = LoadImageFromWebOperations(jParser.url_gbr_solusi+vGbrsolusi[i]+".png");
-						
 
 						vPilihan[i]="";
 						if (vJwbPil1[i].equals("b")){
@@ -597,7 +587,7 @@ public class TryoutMapel extends DashboardActivity
     	String nWaktu = sdf.format(new Date());// merubah format waktu java ke format SQL
 		
     	myDB = openOrCreateDatabase(DBName, MODE_PRIVATE, null);// simpan ke SQLite
-    	myDB.execSQL("INSERT INTO "+TableHasil+"(user,mapel,kode,jml_soal,benar,salah,kosong,nilai,tgl) VALUES('"+spUser+"','"+pMapel+"','"+pKode+"','"+maxSoal+"','"+nBenar+"','"+nSalah+"','"+nKosong+"','"+nNilai+"','"+nWaktu+"');");
+    	myDB.execSQL("INSERT INTO "+TableHasil+"(user,mapel,jml_soal,benar,salah,kosong,nilai,tgl) VALUES('"+spUser+"','"+pMapel+"','"+maxSoal+"','"+nBenar+"','"+nSalah+"','"+nKosong+"','"+nNilai+"','"+nWaktu+"');");
 		    	
         laySoal.setVisibility(View.GONE);
         layPilihan.setVisibility(View.GONE);
