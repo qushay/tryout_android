@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+     >
+    	<Button android:id="@+id/report_btnmtk" style="@style/ReportFooterText"
+    	    android:text="MTK"
+    	    android:textColor="@android:color/white"
+            android:background="@drawable/report_mapel_button"/>
+    	<ImageView style="@style/TitleBarSeparator" />
+        <Button android:id="@+id/report_btnbin" style="@style/ReportFooterText"
+    	    android:text="BIN"
+    	    android:textColor="@android:color/white"
+            android:background="@drawable/report_mapel_button"/>
+        <ImageView style="@style/TitleBarSeparator" />
+        <Button android:id="@+id/report_btnbig" style="@style/ReportFooterText"
+    	    android:text="ENG"
+    	    android:textColor="@android:color/white"
+            android:background="@drawable/report_mapel_button"/>
+        <ImageView style="@style/TitleBarSeparator" />
+        <Button android:id="@+id/report_btnipa" style="@style/ReportFooterText"
+    	    android:text="IPA"
+    	    android:textColor="@android:color/white"
+            android:background="@drawable/report_mapel_button"/>
+
+</LinearLayout>

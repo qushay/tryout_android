@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout android:id="@+id/lay_header_report" style="@style/TitleBar">
+        <ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/description_home"
+            android:src="@drawable/title_home"
+            android:onClick="onClickHome" />
+
+        <ImageView style="@style/TitleBarSeparator" />
+        <TextView style="@style/TitleBarText" />
+    </LinearLayout>
+	<TextView  android:layout_below="@id/lay_header_report"
+	    android:id="@+id/report_tgl"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="30dp" 
+	    android:gravity="center"
+	    android:textColor="#FFF"
+	    android:textSize="18sp"
+	    android:background="#CCF"
+    />
+	<LinearLayout android:layout_below="@id/report_tgl"
+	    android:id="@+id/report_header_list"
+	    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" 
+		    android:layout_gravity="center"
+		    android:textColor="#FFF"
+		    android:background="#EEE">
+
+	    <TextView
+	        android:id="@+id/name"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="7dp"
+	        android:paddingBottom="7dp"
+	        android:paddingLeft="5dp"
+	        android:textSize="17dip"
+	        android:text="Waktu" 
+	        android:layout_weight="8"
+	        android:gravity="center"/>
+		<TextView
+	        android:gravity="center"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="7dp"
+	        android:paddingBottom="7dp"
+	        android:paddingLeft="5dp"
+	        android:textSize="17dip"
+	        android:text="Mata Pelajaran"
+	        android:layout_weight="5" />
+		
+		<TextView
+	        android:gravity="center"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="7dp"
+	        android:paddingBottom="7dp"
+	        android:paddingLeft="5dp"
+	        android:textSize="17dip"
+	        android:text="Nilai"
+	        android:layout_weight="8" />
+	</LinearLayout>
+	<include android:layout_below="@id/report_header_list" android:id="@+id/report_isi" android:layout_height="wrap_content"
+      	layout="@layout/report_isi" android:layout_width="fill_parent"
+      	android:layout_centerHorizontal="true"
+        android:visibility="visible" />
+	<include android:id="@+id/report_footer" android:layout_height="wrap_content"
+      	layout="@layout/footer_report" android:layout_width="fill_parent"
+      	android:layout_centerHorizontal="true" android:layout_alignParentBottom="true"
+        android:visibility="visible" />
+</RelativeLayout>

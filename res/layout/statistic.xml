@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    
+    >
+    <LinearLayout 
+        android:id="@+id/statistik_header"
+        style="@style/TitleBar">
+        <ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/description_home"
+            android:src="@drawable/title_home"
+            android:onClick="onClickHome" />
+
+        <ImageView style="@style/TitleBarSeparator" />
+        <TextView style="@style/TitleBarText" />
+    </LinearLayout>       
+    
+    <TextView
+        android:layout_below="@id/statistik_header"  
+        android:id="@+id/statistik_bulan"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="30dp" 
+	    android:gravity="center"
+	    android:textColor="#FFF"
+	    android:textStyle="bold"
+	    android:textSize="18sp"
+	    android:background="#CCF"
+	    android:text="Januari 2013"
+    />
+    
+    <LinearLayout 
+        android:layout_below="@id/statistik_bulan"  
+        android:id="@+id/statistik_header_mapel"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="30dp" 
+	    android:orientation="horizontal"
+        ><TextView
+	        android:id="@+id/statistik_kali"
+		    android:layout_width="wrap_content" 
+		    android:layout_height="fill_parent" 
+		    android:textColor="#555"
+		    android:gravity="center"
+		    android:textSize="18sp"
+		    android:layout_weight="6"
+			android:background="#EEE"
+			android:layout_marginRight="1dp"
+		    android:text="Jumlah tryout : 3x"
+	    /><TextView
+	        android:id="@+id/statistik_rata"
+		    android:layout_width="wrap_content" 
+		    android:layout_height="fill_parent" 
+		    android:textColor="#555"
+		    android:textSize="18sp"
+		    android:gravity="center"
+		    android:layout_weight="6"
+			android:layout_marginLeft="1dp"
+			android:background="#EEE"
+		    android:text="Rata-rata : 80"
+	    />
+    </LinearLayout>
+	<LinearLayout android:layout_below="@id/statistik_header_mapel" android:id="@+id/statistik_chart_mtk" android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1" android:visibility="invisible" 
+		android:layout_marginBottom="30dp"/>
+	<LinearLayout android:layout_below="@id/statistik_header_mapel" android:id="@+id/statistik_chart_bin" android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1" android:visibility="invisible" 
+		android:layout_marginBottom="30dp"/>
+	<LinearLayout android:layout_below="@id/statistik_header_mapel" android:id="@+id/statistik_chart_big" android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1" android:visibility="invisible" 
+		android:layout_marginBottom="30dp"/>
+	<LinearLayout android:layout_below="@id/statistik_header_mapel" android:id="@+id/statistik_chart_ipa" android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1" android:visibility="invisible" 
+		android:layout_marginBottom="30dp"/>
+	
+	<include android:id="@+id/report_footer" android:layout_height="wrap_content"
+      	layout="@layout/footer_report" android:layout_width="fill_parent"
+      	android:layout_centerHorizontal="true" android:layout_alignParentBottom="true"
+        android:visibility="visible" />
+	
+</RelativeLayout>

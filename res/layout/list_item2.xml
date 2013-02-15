@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <TextView
+	        android:gravity="center"
+        android:id="@+id/report_waktu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="5dp"
+        android:textSize="17dip"
+        android:layout_weight="8"
+        android:layout_marginLeft="7dp"/>
+	<TextView
+        android:id="@+id/report_mapel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="5dp"
+        android:textSize="17dip"
+        android:layout_weight="5" />
+	<TextView
+	        android:gravity="center"
+        android:id="@+id/report_nilai"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="5dp"
+        android:textSize="17dip"
+        android:layout_weight="8" />
+</LinearLayout>

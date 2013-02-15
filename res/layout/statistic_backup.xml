@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    
+    >
+    <LinearLayout style="@style/TitleBar">
+        <ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/description_home"
+            android:src="@drawable/title_home"
+            android:onClick="onClickHome" />
+
+        <ImageView style="@style/TitleBarSeparator" />
+        <TextView style="@style/TitleBarText" />
+        <ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/description_about"
+            android:src="@drawable/title_about"
+            android:onClick="onClickAbout" />
+    </LinearLayout>
+    <TextView  android:id="@+id/statistik_bulan"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="30dp" 
+	    android:gravity="center"
+	    android:textColor="#FFF"
+	    android:textStyle="bold"
+	    android:textSize="18sp"
+	    android:background="#CCF"
+    />
+	<LinearLayout 
+			android:layout_width="fill_parent"
+			android:layout_height="180dp"
+			android:id="@+id/graph_statistic"/>
+	
+	<LinearLayout android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" 
+	    android:layout_gravity="center"
+	    android:textColor="#FFF"
+	    android:textStyle="bold"
+	    android:background="#EEE">
+
+	    <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="7dp"
+	        android:paddingBottom="7dp"
+	        android:paddingLeft="5dp"
+	        android:textSize="17dip"
+	        android:text="Mata pelajaran" 
+	        android:layout_weight="4"
+	        android:gravity="center"/>
+		<TextView
+	        android:gravity="center"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="7dp"
+	        android:paddingBottom="7dp"
+	        android:paddingLeft="5dp"
+	        android:textSize="17dip"
+	        android:text="Kali"
+	        android:layout_weight="8" />
+		<TextView
+	        android:gravity="center"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="7dp"
+	        android:paddingBottom="7dp"
+	        android:paddingLeft="5dp"
+	        android:textSize="17dip"
+	        android:text="Rata"
+	        android:layout_weight="8" />
+	</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="2dp"
+			android:background="#EEE"/>
+	
+	
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+
+	    <TextView
+	        android:id="@+id/stat_mtk_mapel"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="7dp"
+	        android:paddingBottom="7dp"
+	        android:paddingLeft="5dp"
+	        android:textSize="17dip"
+	        android:layout_weight="4"
+	        android:layout_marginLeft="7dp"
+	        android:text="Matematika"/>
+		<TextView
+	        android:gravity="center"
+	        android:id="@+id/stat_mtk_kali"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="7dp"
+	        android:paddingBottom="7dp"
+	        android:paddingLeft="5dp"
+	        android:textSize="17dip"
+	        android:layout_weight="8" />
+		
+		<TextView
+	        android:gravity="center"
+	        android:id="@+id/stat_mtk_rata"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="7dp"
+	        android:paddingBottom="7dp"
+	        android:paddingLeft="5dp"
+	        android:textSize="17dip"
+	        android:layout_weight="8" />
+	</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="2dp"
+			android:background="#EEE"/>
+	<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/stat_bin_mapel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="5dp"
+        android:textSize="17dip"
+        android:layout_weight="4"
+        android:layout_marginLeft="7dp"
+	        android:text="Bahasa Indonesia"/>
+	<TextView
+	        android:gravity="center"
+        android:id="@+id/stat_bin_kali"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="5dp"
+        android:textSize="17dip"
+        android:layout_weight="8" />
+	
+	<TextView
+	        android:gravity="center"
+        android:id="@+id/stat_bin_rata"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="5dp"
+        android:textSize="17dip"
+        android:layout_weight="8" />
+</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="2dp"
+			android:background="#EEE"/>
+	<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/stat_big_mapel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="5dp"
+        android:textSize="17dip"
+        android:layout_weight="4"
+        android:layout_marginLeft="7dp"
+	        android:text="Bahasa Inggris"/>
+	<TextView
+	        android:gravity="center"
+        android:id="@+id/stat_big_kali"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="5dp"
+        android:textSize="17dip"
+        android:layout_weight="8" />
+	
+	<TextView
+	        android:gravity="center"
+        android:id="@+id/stat_big_rata"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="5dp"
+        android:textSize="17dip"
+        android:layout_weight="8" />
+</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="2dp"
+			android:background="#EEE"/>
+	<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/stat_ipa_mapel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="5dp"
+        android:textSize="17dip"
+        android:layout_weight="4"
+        android:layout_marginLeft="7dp"
+	        android:text="IPA"/>
+	<TextView
+	        android:gravity="center"
+        android:id="@+id/stat_ipa_kali"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="5dp"
+        android:textSize="17dip"
+        android:layout_weight="8" />
+	
+	<TextView
+	        android:gravity="center"
+        android:id="@+id/stat_ipa_rata"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="5dp"
+        android:textSize="17dip"
+        android:layout_weight="8" />
+</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="2dp"
+			android:background="#EEE"/>
+</LinearLayout>

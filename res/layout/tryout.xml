@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout style="@style/TitleBar">
+        <ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/description_home"
+            android:src="@drawable/title_home"
+            android:onClick="onClickHome" />
+
+        <ImageView style="@style/TitleBarSeparator" />
+        <TextView style="@style/TitleBarText" />
+    </LinearLayout>
+<LinearLayout android:gravity="center_horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical">
+    <Button
+	    android:id="@+id/btn_mat"
+	    android:text="@string/mapel_mtk"
+		style="@style/TryoutMapelButton"/>
+    <Button
+	    android:id="@+id/btn_bin"
+	    android:text="@string/mapel_bin"
+		style="@style/TryoutMapelButton"/>
+    <Button
+	    android:id="@+id/btn_big"
+	    android:text="@string/mapel_big" 
+		style="@style/TryoutMapelButton"/>
+    <Button
+	    android:id="@+id/btn_ipa"
+	    android:text="@string/mapel_ipa"
+		style="@style/TryoutMapelButton"/>
+</LinearLayout>
+
+
+</LinearLayout>

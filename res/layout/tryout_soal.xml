@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/layout_soal"
+        android:layout_below="@id/layout_header"
+        android:layout_width="fill_parent" 
+        android:visibility="invisible"
+        android:layout_height="wrap_content">
+<RelativeLayout 
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent">
+    <LinearLayout 
+        android:id="@+id/layout_soal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:padding="5dp">
+            <TextView android:id="@+id/tryout_nomer_soal"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textSize="13sp"
+	            android:textColor="@android:color/black"/>
+            <LinearLayout android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical"
+		        android:layout_gravity="top|left">
+		        <TextView android:id="@+id/tryout_soal"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:textSize="12sp"
+		            android:textColor="@android:color/black"/>
+		        <ImageView android:id="@+id/gbr_soal"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"/>
+		    </LinearLayout>
+    </LinearLayout>
+        
+    <LinearLayout android:id="@+id/layout_pilihan"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_soal"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:layout_margin="5dp">
+        <LinearLayout style="@style/TryoutPilihanSeparator"></LinearLayout>
+        <LinearLayout android:id="@+id/lay_pil1"
+            style="@style/TryoutPilihan">
+	        <CheckBox android:id="@+id/chk_pil1"
+	            style="@style/TryoutPilihanCB"/>
+	        <TextView android:id="@+id/tryout_label_a"
+	            android:layout_width="20dp"
+	            android:layout_height="wrap_content"
+	            android:textSize="13sp"
+	            android:textColor="@android:color/black"
+	            android:text="A."/>
+	        <TextView android:id="@+id/tryout_pilihan1"
+	            style="@style/TryoutPilihanText"/>
+	        <ImageView android:id="@+id/gbr_pilihan1"
+	            style="@style/TryoutPilihanImage"/>
+        </LinearLayout>
+        <LinearLayout style="@style/TryoutPilihanSeparator"></LinearLayout>
+        <LinearLayout android:id="@+id/lay_pil2"
+            style="@style/TryoutPilihan">
+	        <CheckBox android:id="@+id/chk_pil2"
+	            style="@style/TryoutPilihanCB"/>
+	        <TextView android:id="@+id/tryout_label_b"
+	            android:layout_width="20dp"
+	            android:layout_height="wrap_content"
+	            android:textSize="13sp"
+	            android:textColor="@android:color/black"
+	            android:text="B."/>
+	        <TextView android:id="@+id/tryout_pilihan2"
+	            style="@style/TryoutPilihanText"/>
+	        <ImageView android:id="@+id/gbr_pilihan2"
+	            style="@style/TryoutPilihanImage"/>
+        </LinearLayout>
+        <LinearLayout style="@style/TryoutPilihanSeparator"></LinearLayout>
+        <LinearLayout android:id="@+id/lay_pil3"
+            style="@style/TryoutPilihan">
+	        <CheckBox android:id="@+id/chk_pil3"
+	            style="@style/TryoutPilihanCB"/>
+	        <TextView android:id="@+id/tryout_label_c"
+	            android:layout_width="20dp"
+	            android:layout_height="wrap_content"
+	            android:textSize="13sp"
+	            android:textColor="@android:color/black"
+	            android:text="C."/>
+	        <TextView android:id="@+id/tryout_pilihan3"
+	            style="@style/TryoutPilihanText"/>
+	        <ImageView android:id="@+id/gbr_pilihan3"
+	            style="@style/TryoutPilihanImage"/>
+        </LinearLayout>
+        <LinearLayout style="@style/TryoutPilihanSeparator"></LinearLayout>
+        <LinearLayout android:id="@+id/lay_pil4"
+            style="@style/TryoutPilihan">
+	        <CheckBox android:id="@+id/chk_pil4"
+	            style="@style/TryoutPilihanCB"/>
+	        <TextView android:id="@+id/tryout_label_d"
+	            android:layout_width="20dp"
+	            android:layout_height="wrap_content"
+	            android:textSize="13sp"
+	            android:textColor="@android:color/black"
+	            android:text="D."/>
+	        <TextView android:id="@+id/tryout_pilihan4"
+	            style="@style/TryoutPilihanText"/>
+	        <ImageView android:id="@+id/gbr_pilihan4"
+	            style="@style/TryoutPilihanImage"/>
+        </LinearLayout>
+        <LinearLayout style="@style/TryoutPilihanSeparator"></LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout android:id="@+id/layout_solusi"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_soal"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:layout_margin="5dp"
+        android:padding="2dp"
+		android:background="#EEE">
+        <TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingTop="2dp"
+			android:paddingBottom="3dp"
+			android:textSize="10dp"
+			android:text="Kunci Jawaban"
+			android:gravity="center"
+			android:background="#EEE"/>
+        <LinearLayout 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:padding="3dp"
+			android:orientation="vertical"
+			android:background="#FFF">
+            <TextView android:id="@+id/tryout_jawaban"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:textSize="15sp"
+	            android:textColor="@android:color/black"/>
+	        <ImageView android:id="@+id/gbr_jawaban"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"/>
+        </LinearLayout>
+        
+    </LinearLayout>
+</RelativeLayout>
+    </ScrollView>
