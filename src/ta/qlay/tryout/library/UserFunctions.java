@@ -7,22 +7,16 @@ import java.util.List;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
-
-import ta.qlay.tryout.activity.R;
-
-import android.R.string;
 import android.content.Context;
-import android.text.GetChars;
 
 public class UserFunctions {
 	
 	private JSONParser jsonParser;
-	private String url_server="http://192.168.43.35/tryout/client/";
+	private String url_server="http://labsistemkomputer.net/user/qlay/client/";
 	private String loginURL = url_server+"index.php";
     
     
 	private String login_tag = "login";
-	private String materi_tag = "materi";
 	
 	// constructor
 	public UserFunctions(){

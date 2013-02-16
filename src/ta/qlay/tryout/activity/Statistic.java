@@ -2,7 +2,6 @@
 package ta.qlay.tryout.activity;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
@@ -390,7 +389,7 @@ private void renderGrafikIpa() {
 
 public double[] isiGrafik(String vBulan,String vMapel) {
 	double[] vNilai=null;
-	List<Double> doubleList = new ArrayList<Double>();
+//	List<Double> doubleList = new ArrayList<Double>();
 	try{
 		myDBGraf = this.openOrCreateDatabase(DBName,0, null);
 		Cursor cur = myDBGraf.rawQuery("SELECT nilai FROM "+TableHasil+" WHERE user='"+spUser+"' AND mapel='"+vMapel+"' AND (strftime('%m', tgl))='"+vBulan+"'", null);

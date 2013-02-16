@@ -26,7 +26,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -46,9 +45,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
@@ -375,22 +371,32 @@ public class TryoutMapel extends DashboardActivity
 						vId[i]= c.getString(TAG_PID);
 						vSoal[i] = formatDegree(c.getString(TAG_SOAL));//soal
 						vGbrsoal[i] = c.getString(TAG_GBR_SOAL);
-						drawSoal[i] = LoadImageFromWebOperations(jParser.url_gbr_soal+vGbrsoal[i]+".png");
+						if (!vGbrsoal[i].equals("null")||!vGbrsoal[i].equals("")){
+							drawSoal[i] = LoadImageFromWebOperations(jParser.url_gbr_soal+vGbrsoal[i]+".png");
+						}
 						vPil1[i]=formatDegree(c.getString(TAG_PIL1));//pilihan1
 						vGbrpil1[i]=c.getString(TAG_GBR_PIL1);
-						drawPil1[i] = LoadImageFromWebOperations(jParser.url_gbr_pil+vGbrpil1[i]+".png");
+						if (!vGbrpil1[i].equals("null")||!vGbrpil1[i].equals("")){
+							drawPil1[i] = LoadImageFromWebOperations(jParser.url_gbr_pil+vGbrpil1[i]+".png");
+						}
 						vJwbPil1[i]=c.getString(TAG_STAT1);
 						vPil2[i]=formatDegree(c.getString(TAG_PIL2));//pilihan2
 						vGbrpil2[i]=c.getString(TAG_GBR_PIL2);
-						drawPil2[i] = LoadImageFromWebOperations(jParser.url_gbr_pil+vGbrpil2[i]+".png");
+						if (!vGbrpil2[i].equals("null")||!vGbrpil2[i].equals("")){
+							drawPil2[i] = LoadImageFromWebOperations(jParser.url_gbr_pil+vGbrpil2[i]+".png");
+						}
 						vJwbPil2[i]=c.getString(TAG_STAT2);
 						vPil3[i]=formatDegree(c.getString(TAG_PIL3));//pilihan3
 						vGbrpil3[i]=c.getString(TAG_GBR_PIL3);
-						drawPil3[i] = LoadImageFromWebOperations(jParser.url_gbr_pil+vGbrpil3[i]+".png");
+						if (!vGbrpil3[i].equals("null")||!vGbrpil3[i].equals("")){
+							drawPil3[i] = LoadImageFromWebOperations(jParser.url_gbr_pil+vGbrpil3[i]+".png");
+						}
 						vJwbPil3[i]=c.getString(TAG_STAT3);
 						vPil4[i]=formatDegree(c.getString(TAG_PIL4));//pilihan4
 						vGbrpil4[i]=c.getString(TAG_GBR_PIL4);
-						drawPil4[i] = LoadImageFromWebOperations(jParser.url_gbr_pil+vGbrpil4[i]+".png");
+						if (!vGbrpil4[i].equals("null")||!vGbrpil4[i].equals("")){
+							drawPil4[i] = LoadImageFromWebOperations(jParser.url_gbr_pil+vGbrpil4[i]+".png");
+						}
 						vJwbPil4[i]=c.getString(TAG_STAT4);
 
 						vPilihan[i]="";
@@ -410,21 +416,6 @@ public class TryoutMapel extends DashboardActivity
 							vJawaban[i]="d";
 							vSolusibenar[i]=vPil4[i];
 							drawSolusiBenar[i]=drawPil4[i];
-						}
-						
-						if (vSoal[i].equals("null")){
-							bm=((BitmapDrawable)drawSoal[i]).getBitmap();
-							file = new File(extStorageDirectory, vGbrsoal[i].toString()+".png");
-							try {
-								outStream = new FileOutputStream(file);
-								bm.compress(Bitmap.CompressFormat.PNG, 100, outStream);
-								outStream.flush();
-								outStream.close();
-							} catch (FileNotFoundException e) {
-								e.printStackTrace();
-							} catch (IOException e) {
-								e.printStackTrace();
-							}
 						}
 						
 					}
